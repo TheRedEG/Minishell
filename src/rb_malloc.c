@@ -8,7 +8,6 @@
 ** Last update Wed Apr 20 10:40:59 2016 Thomas Girolet
 */
 
-#include <stdlib.h>
 #include "minishell.h"
 
 void	*rb_malloc(size_t s)

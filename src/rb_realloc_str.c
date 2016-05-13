@@ -7,7 +7,7 @@
 ** Started on  Wed Apr 20 11:25:09 2016 Thomas Girolet
 ** Last update Wed Apr 20 11:37:54 2016 Thomas Girolet
 */
-#include <string.h>
+
 #include "minishell.h"
 
 char	*rb_realloc_str(char *str, size_t s)

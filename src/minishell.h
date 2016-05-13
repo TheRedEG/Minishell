@@ -27,4 +27,8 @@ char	**my_getenv(char **env);
 char	*cpy(char *str);
 char	*find_path(char **path_list, char *binaire);
 
+/* MINISHELL BUILTINS */
+
+void	cd_dir(char	*path);
+
 #endif	/*_MINISHELL_H_*/

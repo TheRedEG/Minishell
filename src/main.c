@@ -29,6 +29,14 @@ void	welcome()
   my_putstr("#############################################################\n\n");
 }
 
+/* SECURITY */
+
+int	security(char *str)
+{
+  /* Corriger le SegF sur les espace d'avant cmd */
+  return (0);
+}
+
 /* Loop du minishell */
 
 int	main(int ac, char **av, char **env)
@@ -42,14 +50,23 @@ int	main(int ac, char **av, char **env)
     {
       prompt();
       cmd = get_line(0);
-      tab = rb_str_to_wordtab(cmd, ' ');
-      if (tab[0][0] == 'c' && tab[0][1] == 'd')
-      cd_dir(tab[1]);
-      path = my_getenv(env);
-      cmd = find_path(path,tab[0]);
-      tab[0] = cmd;
-      exec_cmd(cmd, tab ,env);
-      wait(NULL);
+      if (cmd[0] != '\0')
+	{
+	  tab = rb_str_to_wordtab(cmd, ' ');
+	  if (tab[0][0] == 'c' && tab[0][1] == 'd')
+	    cd_dir(tab[1]);
+	  else
+	    {
+	      path = my_getenv(env);
+	      cmd = find_path(path,tab[0]);
+	      tab[0] = cmd;
+	      exec_cmd(cmd, tab ,env);
+	      wait(NULL);
+	    }
+	}
+      else
+	wait(NULL);
     }
   return (0);
 }
+

@@ -20,6 +20,7 @@ char	*get_line(int fd)
 	  buffer = rb_realloc_str(buffer, sizeof(char) * ((my_strlen(buffer) + 1)));
 	  i++;
 	}
+    
     }
   return(buffer);
 }

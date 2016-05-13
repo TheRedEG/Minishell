@@ -31,6 +31,8 @@ char			*find_path(char **path_list, char *binaire)
       if (rval == -1)
 	i++;
     }
+  my_putstr(binaire);
+  my_putstr(" : commande introuvable");
 }
 
 /* Recoupe les PATH dispo */

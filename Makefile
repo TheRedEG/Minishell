@@ -1,8 +1,9 @@
 CC	=	gcc
 
 SRC	=	src/get_line.c		\
-		src/my_putchar.c		\
-		src/minishell_fct.c		\
+		src/my_putchar.c	\
+		src/minishell_cmd.c	\
+		src/minishell_display.c	\
 		src/my_putstr.c		\
 		src/my_strlen.c		\
 		src/rb_malloc.c		\

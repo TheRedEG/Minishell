@@ -70,3 +70,11 @@ char			**my_getenv(char **env)
   return(res);
 
 }
+
+/* 4 - Execute la cmd */
+
+void		exec_cmd(char *path,char **tab, char **env)
+{
+  if (fork() == 0)
+    execve(tab[0], tab, env);
+}

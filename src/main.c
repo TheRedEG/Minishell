@@ -1,14 +1,6 @@
 #include "minishell.h"
 
-/* 1 - Execute la cmd */
-
-void		exec_cmd(char *path,char **tab, char **env)
-{
-  if (fork() == 0)
-    execve(tab[0], tab, env);
-}
-
-/* 2 - Commande CHDIR */
+/* 1 - Commande CHDIR */
 
 void		cd_dir(char *path)
 {
@@ -19,14 +11,6 @@ void		cd_dir(char *path)
   my_putstr("Bash : Aucun dossier de ce type");
 }
 
-/* 3 - WELCOME */
-void		welcome()
-{
-  my_putstr("\n\n");
-  my_putstr("#############################################################\n");
-  my_putstr("*                   WELCOME TO MY MINISHELL                 *\n");
-  my_putstr("#############################################################\n\n");
-}
 
 int		exit_prog(char *str)
 {
@@ -40,7 +24,7 @@ int		exit_prog(char *str)
   return (i);
 }
 
-/* 4 - Découpe l'input user + exit */
+/* 3 - Découpe l'input user + exit */
 
 char		**get_command()
 {
@@ -57,7 +41,7 @@ char		**get_command()
   return (tab);
 }
   
-/* 5 - Loop du minishell */
+/* 4 - Loop du minishell */
 
 int		main(int ac, char **av, char **env)
 {

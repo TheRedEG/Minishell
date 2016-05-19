@@ -20,12 +20,16 @@ char	*get_line(int fd);
 char	*rb_realloc_str(char *str, size_t s);
 char	**rb_str_to_wordtab(char *str, char delim);
 
-/* MINISHELL FUNCTIONS */
+/* MINISHELL CMD */
 
-void	prompt();
-char	**my_getenv(char **env);
-char	*cpy(char *str);
 char	*find_path(char **path_list, char *binaire);
+char	*cpy(char *str);
+char	**my_getenv(char **env);
+
+/* MINISHELL DISPLAY */
+
+void	welcome();
+void	prompt();
 
 /* MINISHELL BUILTINS */
 

@@ -1,13 +1,13 @@
 #include "minishell.h"
 
-/* Affiche le prompt du termianal */
+/* 1 - Affiche le prompt du termianal */
 
 void			prompt()
 {
   my_putstr("\nMinishell $> ");
 }
 
-/* Creer le PATH finale */
+/* 2 - Creer le PATH finale */
 
 char			*find_path(char **path_list, char *binaire)
 {
@@ -35,7 +35,7 @@ char			*find_path(char **path_list, char *binaire)
   my_putstr(" : commande introuvable");
 }
 
-/* Recoupe les PATH dispo */
+/* 3 - Recoupe les PATH dispo */
 
 char			*cpy(char *str)
 {
@@ -54,7 +54,7 @@ char			*cpy(char *str)
   return (result);
 }
 
-/* Recupere char PATH possible */
+/* 4 - Recupere char PATH possible */
 
 char			**my_getenv(char **env)
 {

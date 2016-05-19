@@ -11,7 +11,7 @@ SRC	=	src/get_line.c		\
 		src/rb_str_to_wordtab.c	\
 		src/main.c
 
-FLAG	=	-I./src
+FLAG	=	-I./src -Wextra -Wall -Werror
 
 NAME	=	Minishell
 

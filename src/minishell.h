@@ -7,18 +7,23 @@
 #include <dirent.h>
 #include <sys/types.h>
 #include <string.h>
-#include <stdio.h>
 
 /* BASICS FUNCIONS */
 
-void	*rb_malloc(size_t s);
 void	my_putchar(char c);
 void	my_putstr(char *str);
-void	rb_show_word_tab(char **array);
 int	my_strlen(char *str);
 char	*get_line(int fd);
-char	*rb_realloc_str(char *str, size_t s);
+
+/* WORDTAB */
+
+void	rb_show_word_tab(char **array);
 char	**rb_str_to_wordtab(char *str, char delim);
+
+/* ALLOC */
+
+void	*rb_malloc(size_t s);
+char	*rb_realloc_str(char *str, size_t s);
 
 /* MINISHELL CMD */
 

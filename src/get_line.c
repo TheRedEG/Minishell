@@ -22,5 +22,30 @@ char	*get_line(int fd)
 	}
     
     }
-  return(buffer);
+  space_before(buffer);
+}
+
+char	*space_before(char *str)
+{
+  int	i;
+  int	x;
+  int	len;
+  char	*res;
+  
+  i = 0;
+  x = 0;
+  len = my_strlen(str);
+  while (str[i] == ' ')
+    {
+      i++;
+    }
+  res = rb_realloc_str(res, sizeof(char) * ((strlen(str) - i)));
+  while (i != len)
+    {
+      res[x] = str[i];
+      x++;
+      i++;
+    }
+  res[x] = '\0';
+  return (res);
 }

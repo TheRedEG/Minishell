@@ -1,12 +1,12 @@
 CC	=	gcc
 
-SRC	=	src/get_line.c		\
-		src/minishell_cmd.c	\
-		src/minishell_display.c	\
-		src/rb_show_word_tab.c	\
-		src/rb_str_to_wordtab.c	\
-		src/basics.c		\
-		src/alloc.c		\
+SRC	=	src/get_line.c			\
+		src/minishell_cmd.c		\
+		src/minishell_display.c		\
+		src/rb_show_word_tab.c		\
+		src/rb_str_to_wordtab.c		\
+		src/basics.c			\
+		src/alloc.c			\
 		src/main.c
 
 FLAG	=	-I./src -Wextra -Wall -Werror

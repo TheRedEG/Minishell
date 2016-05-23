@@ -14,6 +14,7 @@ void	my_putchar(char c);
 void	my_putstr(char *str);
 int	my_strlen(char *str);
 char	*get_line(int fd);
+char	*space_before(char *str);
 
 /* WORDTAB */
 
@@ -39,5 +40,8 @@ void	prompt();
 /* MINISHELL BUILTINS */
 
 void	cd_dir(char	*path);
+
+/* SECURITY */
+
 
 #endif	/*_MINISHELL_H_*/

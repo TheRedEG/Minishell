@@ -75,6 +75,11 @@ char			**my_getenv(char **env)
 
 void		exec_cmd(char *path,char **tab, char **env)
 {
+  int	p;
+  
   if (fork() == 0)
     execve(tab[0], tab, env);
+  /*BETA
+  p = getpid();
+  printf("PID =%d\n",p);*/
 }

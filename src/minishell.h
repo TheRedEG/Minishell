@@ -7,14 +7,20 @@
 #include <dirent.h>
 #include <sys/types.h>
 #include <string.h>
+/* BETA Test */
+#include <stdio.h>
 
 /* BASICS FUNCIONS */
 
 void	my_putchar(char c);
 void	my_putstr(char *str);
 int	my_strlen(char *str);
+
+/* GET_LINE */
+
 char	*get_line(int fd);
 char	*space_before(char *str);
+char	*space_after(char *str);
 
 /* WORDTAB */
 

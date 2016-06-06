@@ -11,7 +11,7 @@ void		cd_dir(char *path)
   my_putstr("Bash : Aucun dossier de ce type");
 }
 
-
+/* Exit */
 int		exit_prog(char *str)
 {
   int	i;
@@ -30,14 +30,19 @@ char		**get_command()
 {
   char	*cmd;
   char	**tab;
+  int	pid;
   
   cmd = get_line(0);
   if (cmd[0] != '\0')
     {
       tab = rb_str_to_wordtab(cmd, ' ');
       if (exit_prog(tab[0]) == 2)
-	exit(0);
-    }    
+	{
+	  pid = getpid();
+	  kill(pid,SIGKILL);
+	  exit(0);
+	}  
+    }
   return (tab);
 }
   

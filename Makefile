@@ -9,7 +9,7 @@ SRC	=	src/get_line.c			\
 		src/alloc.c			\
 		src/main.c
 
-FLAG	=	-I./src -Wextra -Wall -Werror
+FLAG	=	-I./src -Wextra -Wall -Werror -g3
 
 NAME	=	Minishell
 

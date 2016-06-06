@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-char	*get_line(int fd)
+char		*get_line(int fd)
 {
   int	nread;
   char	*buffer;
@@ -25,7 +25,9 @@ char	*get_line(int fd)
   space_before(buffer);
 }
 
-char	*space_before(char *str)
+/* Delete all space before command */
+
+char		*space_before(char *str)
 {
   int	i;
   int	x;
@@ -39,7 +41,7 @@ char	*space_before(char *str)
     {
       i++;
     }
-  res = rb_realloc_str(res, sizeof(char) * ((strlen(str) - i)));
+  res = rb_realloc_str(res, sizeof(char) * ((my_strlen(str) - i)));
   while (i != len)
     {
       res[x] = str[i];
@@ -47,5 +49,29 @@ char	*space_before(char *str)
       i++;
     }
   res[x] = '\0';
+  space_after(res);
+}
+
+/* Delete all space after command */
+
+char		*space_after(char *str)
+{
+  int	len;
+  int	i;
+  char	*res;
+  
+  len = (my_strlen(str)-1);
+  i = 0;
+  while (str[len] == ' ')
+    {
+      len--;
+    }
+  len++;
+  res = rb_malloc(sizeof(char) * (len));
+  while (i < len)
+    {
+      res[i] = str[i];
+      i++;
+    }   
   return (res);
 }
